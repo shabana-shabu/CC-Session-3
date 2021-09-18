@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CALCULATOR APP</title>
+<script>
+function insert(number) 
+{
+document.form1.textview.value = document.form1.textview.value + number;
+}
+function equal()
+{
+var expression= document.form1.textview.value;
+if(expression)
+{
+document.form1.textview.value = eval(expression).toFixed(4);
+}
+}
+
+function backspace()
+{
+var expression = document.form1.textview.value;
+document.form1.textview.value = expression.substring(0, expression.length - 1);
+}
+</script>
+<style>
+	body{
+		background-color:yellow;
+		font-style: italic;
+	}
+.formstyle
+{
+width: 300px;
+height: 350px;
+margin: 20px auto;
+border: 3px solid skyblue;
+border-radius: 5px;
+padding: 20px;
+text-align: center;
+background-color:hotpink;
+font-family:sans-serif;
+}
+h1 {
+	text-align: center;
+	padding:25px;
+	background-color:blue;
+	color:yellow;
+	font-size:50px;
+	}
+	input{
+font-family:cursive;
+}	
+input:hover
+{
+background-color:white;
+color: black;
+}
+	
+*{
+margin: 0;
+padding: 0;
+}
+
+.btn{
+width: 60px;
+height: 50px;
+font-size: 30px;
+margin: 2px;
+cursor: pointer;
+background-color:black;
+color:white;
+border-radius:10px;
+border: 2px solid red;
+font-weight: 120px;
+}
+
+.textview{
+width: 260px;
+margin: 5px;
+font-size: 25px;
+padding: 5px;
+background-color: lightgreen;
+color:red;
+}
+
+.calculator-keys {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap:3px;
+  padding: 20px;
+	}
+	#operator{
+background-color:teal;
+	}
+	#button{
+	background-color:red;
+	}
+</style>
+</head>
+<body>
+	<marquee direction="down">
+<h1>CALCULATOR</h1>
+</marquee>
+ <div class= "formstyle">
+ <form name = "form1">
+ <input class= "textview" name = "textview">
+ </form>
+ <center>
+ 	<div class="calculator-keys">
+<br>
+  <input class = "btn" id="operator" type = "button"  value = "CE" onclick = "form1.textview.value = ' ' " > 
+	 <input  class = "btn" id="operator"  type = "button" value = "DEL" onclick = "backspace()" > 
+	<input  class = "btn" id="operator" type = "button" value = "/" onclick = "insert('/')" >
+	 <input class = "btn" type = "button" value = "7" onclick = "insert(7)" > 
+	 <input class = "btn" type = "button" value = "8" onclick = "insert(8)" > 
+	 <input class = "btn" type = "button" value = "9" onclick = "insert(9)" >
+	  <input class = "btn" id="operator" type = "button" value = "x" onclick = "insert('*')" >
+	 <input class = "btn" type = "button" value = "4" onclick = "insert(4)" > 
+	 <input class = "btn" type = "button" value = "5" onclick = "insert(5)" > 
+	 <input class = "btn" type = "button" value = "6" onclick = "insert(6)" > 
+	 <input class = "btn" id="operator" type = "button" value = "-" onclick = "insert('-')" > 
+	 <input class = "btn" type = "button" value = "1" onclick = "insert(1)" >
+	<input class = "btn" type = "button" value = "2" onclick = "insert(2)" > 
+	 <input class = "btn" type = "button" value = "3" onclick = "insert(3)" > 
+	  <input class = "btn" id="operator" type = "button" value = "+" onclick = "insert('+')" > 
+	 <input class = "btn" id="operator" type = "button" value = "." onclick = "insert('.')"> 
+	  <input class = "btn" type = "button" value = "0" onclick = "insert(0)" > 
+	  <input class="btn" id="button" type="button" value="=" onclick="equal()">
+		<input class="btn" id="operator" type="button" value="%" onclick="insert('%')" >
+	</center>
+</table>
+</div>	
+ </div>
+ </body>
+ </html>
